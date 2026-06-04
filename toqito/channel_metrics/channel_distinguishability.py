@@ -49,7 +49,7 @@ def channel_distinguishability(
         strategy: Whether to perform Bayesian or minimax discrimination task. Possible
                   values are "Bayesian" and "minimax". Default option is `strategy="Bayesian"`.
         solver: Optimization option for `picos` solver. Default option is `solver="cvxopt"`.
-        primal_dual: Option for the optimization problem. Default option is `solver="cvxopt"`.
+        primal_dual: Option for the optimization problem. Default option is `primal_dual="dual"`.
         kwargs: Additional arguments to pass to picos' solve method.
 
     Returns:

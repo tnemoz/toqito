@@ -113,7 +113,7 @@ def state_distinguishability(
         kwargs: Additional arguments to pass to picos' solve method.
 
     Returns:
-        The optimal probability with which Bob can guess the state he was not given from `states` along with the optimal
+        The optimal probability with which Bob can guess the state he was given from `states` along with the optimal
         set of measurements.
 
     Examples:
@@ -195,8 +195,12 @@ def state_distinguishability(
             raise ValueError("The 'subsystems' and 'dimensions' parameters are required for PPT measurements.")
         if primal_dual == "primal":
             return _ppt_primal(
-                vectors=vectors, subsystems=subsystems, dimensions=dimensions,
-                probs=probs, solver=solver, strategy=strategy,
+                vectors=vectors,
+                subsystems=subsystems,
+                dimensions=dimensions,
+                probs=probs,
+                solver=solver,
+                strategy=strategy,
             )
         return _ppt_dual(
             vectors=vectors, subsystems=subsystems, dimensions=dimensions, probs=probs, solver=solver, strategy=strategy
